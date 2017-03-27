@@ -25,7 +25,8 @@
             android:showDividers="middle">
 
             <Button
-                android:text="button1"
+                android:id="@+id/recyclerview_btn"
+                android:text="RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

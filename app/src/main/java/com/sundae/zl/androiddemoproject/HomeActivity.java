@@ -39,6 +39,17 @@ public class HomeActivity extends BaseUtilActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        initButtonAction();
+    }
+
+    private void initButtonAction() {
+        $(R.id.recyclerview_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecyclerViewDemoActivity.startActivity(HomeActivity.this);
+            }
+        });
     }
 
     @Override

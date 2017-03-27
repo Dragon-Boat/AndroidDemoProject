@@ -30,8 +30,9 @@ dependencies {
     compile rootProject.ext.dependencies["design"]
     compile rootProject.ext.dependencies["constraint-layout"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
-    compile (rootProject.ext.dependencies["vlayout"]){
+    compile(rootProject.ext.dependencies["vlayout"]) {
         transitive = true
     }
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
 }
