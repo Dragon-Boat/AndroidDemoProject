@@ -22,8 +22,8 @@ ext {
             "design"             : "com.android.support:design:25.3.0",
             "constraint-layout"  : "com.android.support.constraint:constraint-layout:1.0.2",
             "recyclerview-v7"    : "com.android.support:recyclerview-v7:25.0.0",
-
-//            "butterknife"        : "com.jakewharton:butterknife:7.0.1",
+            "vlayout"            : "com.alibaba.android:vlayout:1.0.3@aar",
+            "butterknife"        : "com.jakewharton:butterknife:8.5.1",
 //            "logging-interceptor": "com.squareup.okhttp3:logging-interceptor:3.0.1"
     ]
 }
