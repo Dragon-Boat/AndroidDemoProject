@@ -29,5 +29,6 @@ dependencies {
     compile rootProject.ext.dependencies["support-v4"]
     compile rootProject.ext.dependencies["design"]
     compile rootProject.ext.dependencies["constraint-layout"]
+    compile rootProject.ext.dependencies["recyclerview-v7"]
     testCompile 'junit:junit:4.12'
 }
