@@ -13,7 +13,21 @@ import com.sundae.zl.androiddemoproject.util.ViewUtil;
  */
 
 public class BaseUtilActivity extends AppCompatActivity {
+    private boolean mDestroyed;
+
     protected <E extends View> E $(@IdRes int resId) {
         return ViewUtil.findViewById(this, resId);
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mDestroyed = true;
+
+    }
+
+    public boolean canTouchUi() {
+        return !isFinishing() && !mDestroyed;
+    }
+
 }
