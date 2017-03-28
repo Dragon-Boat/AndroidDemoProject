@@ -20,7 +20,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".recyclerview.RecyclerViewDemoActivity" />
-        <activity android:name=".FragmentActivity"></activity>
+        <activity android:name=".FActivity"></activity>
+        <activity android:name=".vlayoutexample.MainActivity" />
+        <activity android:name=".vlayoutexample.OnePlusNLayoutActivity" />
+        <activity android:name=".vlayoutexample.RootActivity" >
+        </activity>
+        <activity android:name=".vlayoutexample.TestActivity" />
+        <activity android:name=".vlayoutexample.VLayoutActivity" />
     </application>
 
 </manifest>

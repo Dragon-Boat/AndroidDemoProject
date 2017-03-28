@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.sundae.zl.androiddemoproject.recyclerview.RecyclerViewDemoActivity;
+import com.sundae.zl.androiddemoproject.vlayoutexample.RootActivity;
 
 public class HomeActivity extends BaseUtilActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,7 +56,13 @@ public class HomeActivity extends BaseUtilActivity
         $(R.id.fragment_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                FActivity.start(HomeActivity.this);
+            }
+        });
+        $(R.id.vlayout_demo_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RootActivity.start(HomeActivity.this);
             }
         });
     }

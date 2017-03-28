@@ -1,13 +1,19 @@
 package com.sundae.zl.androiddemoproject;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class FragmentActivity extends BaseUtilActivity {
+public class FActivity extends BaseUtilActivity {
 
 
+    public static void start(Context context) {
+        Intent intent = new Intent(context, FActivity.class);
+        context.startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
