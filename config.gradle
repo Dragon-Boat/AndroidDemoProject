@@ -24,6 +24,7 @@ ext {
             "recyclerview-v7"    : "com.android.support:recyclerview-v7:25.0.0",
             "vlayout"            : "com.alibaba.android:vlayout:1.0.3@aar",
             "butterknife"        : "com.jakewharton:butterknife:8.5.1",
-//            "logging-interceptor": "com.squareup.okhttp3:logging-interceptor:3.0.1"
+            "greedo-layout"      : "com.fivehundredpx:greedo-layout:1.0.0",
+            "flexbox"            : "com.google.android:flexbox:0.3.0-alpha2"
     ]
 }
