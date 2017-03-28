@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.sundae.zl.androiddemoproject.recyclerview.RecyclerViewDemoActivity;
+
 public class HomeActivity extends BaseUtilActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -48,6 +50,12 @@ public class HomeActivity extends BaseUtilActivity
             @Override
             public void onClick(View v) {
                 RecyclerViewDemoActivity.startActivity(HomeActivity.this);
+            }
+        });
+        $(R.id.fragment_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }

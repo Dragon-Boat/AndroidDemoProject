@@ -2,9 +2,24 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_container"
-    tools:context="com.sundae.zl.androiddemoproject.RecyclerViewDemoActivity">
+    tools:context="com.sundae.zl.androiddemoproject.recyclerview.RecyclerViewDemoActivity">
 
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tab_layout_height"
+        app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+        app:tabIndicatorColor="@color/selected_text_color"
+        app:tabIndicatorHeight="2dp"
+        app:tabSelectedTextColor="@color/selected_text_color"
+        app:tabTextColor="@color/tab_text_color" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/tab_layout_height" />
 </FrameLayout>

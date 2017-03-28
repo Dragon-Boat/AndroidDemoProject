@@ -36,8 +36,6 @@ public class BaseUtilFragment extends Fragment {
         }
 
         return activity.isDestroyed();
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-//            return activity.isDestroyed();
-//        }
+
     }
 }
