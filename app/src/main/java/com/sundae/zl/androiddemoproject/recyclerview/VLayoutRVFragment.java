@@ -1,6 +1,5 @@
 package com.sundae.zl.androiddemoproject.recyclerview;
 
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,9 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.sundae.zl.androiddemoproject.BaseUtilFragment;
 import com.sundae.zl.androiddemoproject.R;
+import com.sundae.zl.androiddemoproject.model.BaseAdapter;
+import com.sundae.zl.androiddemoproject.recyclerview.layoutmanager.CustomLayoutManager;
 
 /**
  * Created by @author hzzhoulong
@@ -19,7 +19,7 @@ import com.sundae.zl.androiddemoproject.R;
  * # Copyright 2017 netease. All rights reserved.
  */
 
-public class VLayoutRVFrament extends BaseUtilFragment {
+public class VLayoutRVFragment extends BaseUtilFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,17 +30,12 @@ public class VLayoutRVFrament extends BaseUtilFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final RecyclerView recyclerView = $(view, R.id.recycleview);
-        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
-            @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                outRect.set(10,10,10,10);
-            }
-        });
-        VirtualLayoutManager layoutManager = new VirtualLayoutManager(getContext());
-
+        CustomLayoutManager layoutManager = new CustomLayoutManager();
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(new BaseAdapter());
     }
 
     public static Fragment instance() {
-        return new VLayoutRVFrament();
+        return new VLayoutRVFragment();
     }
 }

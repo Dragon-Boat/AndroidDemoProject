@@ -11,40 +11,43 @@
     tools:showIn="@layout/app_bar_home">
 
     <android.support.v4.widget.NestedScrollView
-        android:overScrollMode="always"
         android:layout_width="312dp"
         android:layout_height="495dp"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:overScrollMode="always"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_horizontal"
-            android:dividerPadding="@dimen/divider_padding"
-            android:orientation="vertical"
             android:divider="@drawable/divider"
+            android:dividerPadding="@dimen/divider_padding"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             android:showDividers="middle">
 
             <Button
                 android:id="@+id/recyclerview_btn"
-                android:text="RecyclerView"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
+                style="@style/Widget.Normal.Button"
+                android:text="RecyclerView" />
 
             <Button
                 android:id="@+id/fragment_btn"
-                android:text="fragment"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
+                style="@style/Widget.Normal.Button"
+                android:text="fragment" />
+
             <Button
                 android:id="@+id/vlayout_demo_btn"
-                android:text="vlayoutDemo"
-                android:textAllCaps="false"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+
+                style="@style/Widget.Normal.Button"
+                android:text="vlayoutDemo" />
+
+            <Button
+                android:id="@+id/webview_btn"
+                style="@style/Widget.Normal.Button"
+                android:text="webView" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 

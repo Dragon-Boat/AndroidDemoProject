@@ -65,6 +65,12 @@ public class HomeActivity extends BaseUtilActivity
                 RootActivity.start(HomeActivity.this);
             }
         });
+        $(R.id.webview_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                WebViewActivity.start(HomeActivity.this);
+            }
+        });
     }
 
     @Override
