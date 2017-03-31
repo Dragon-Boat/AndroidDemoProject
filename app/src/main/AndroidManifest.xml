@@ -29,6 +29,7 @@
         <activity android:name=".vlayoutexample.TestActivity" />
         <activity android:name=".vlayoutexample.VLayoutActivity" />
         <activity android:name=".WebViewActivity" />
+        <activity android:name=".PopWinActivity" />
     </application>
 
 </manifest>

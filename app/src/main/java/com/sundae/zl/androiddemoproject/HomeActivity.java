@@ -71,6 +71,12 @@ public class HomeActivity extends BaseUtilActivity
                 WebViewActivity.start(HomeActivity.this);
             }
         });
+        $(R.id.popwin_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopWinActivity.start(HomeActivity.this);
+            }
+        });
     }
 
     @Override
