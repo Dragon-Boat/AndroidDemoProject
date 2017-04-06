@@ -31,6 +31,7 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
 //定义竖直方向的偏移量
         int offsetY = 0;
         int offsetX = 0;
+        totalHeight = 0;
         int childCount = getItemCount();
         if (childCount <= 0) {
             return;

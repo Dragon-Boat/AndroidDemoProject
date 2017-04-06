@@ -37,7 +37,7 @@ public class RecyclerViewDemoActivity extends BaseUtilActivity {
                     return FlexRVFragment.instance();
                 }
                 if (position == 2) {
-                    return VLayoutRVFragment.instance();
+                    return GreedoRVFragment.instance();
                 }
                 if (position == 3) {
                     return VLayoutRVFragment.instance();

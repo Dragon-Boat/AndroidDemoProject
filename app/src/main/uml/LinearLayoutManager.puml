@@ -1,0 +1,10 @@
+@startuml
+
+class LinearLayoutManager extends RecyclerView.LayoutManager implements ItemTouchHelper.ViewDropHandler, RecyclerView.SmoothScroller.ScrollVectorProvider{
+            /**
+             * Current orientation. Either {@link #HORIZONTAL} or {@link #VERTICAL}
+             */
+            int mOrientation;
+        }
+
+@enduml
