@@ -15,9 +15,12 @@ import android.view.ViewGroup;
  */
 
 public class CustomLayoutManager extends RecyclerView.LayoutManager {
+    public static final String TAG = "CustomLayoutManager";
 
     int verticalScrollOffset;
     int totalHeight;
+    int offsetY;
+    int offsetX;
     private SparseArray<Rect> allItemFrames = new SparseArray<>();
     private SparseBooleanArray hasAttachedItems = new SparseBooleanArray();
 
@@ -29,8 +32,8 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         detachAndScrapAttachedViews(recycler);
 //定义竖直方向的偏移量
-        int offsetY = 0;
-        int offsetX = 0;
+        offsetY = 0;
+        offsetX = 0;
         totalHeight = 0;
         int childCount = getItemCount();
         if (childCount <= 0) {
@@ -47,8 +50,8 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
             //把宽高拿到，宽高都是包含ItemDecorate的尺寸
             int width = getDecoratedMeasuredWidth(view);
             int height = getDecoratedMeasuredHeight(view);
-            width = width / 2 + 1;
-            height = height / 2 + 1;
+            width = width / 2;
+            height = height / 2;
             if (width + offsetX >= getWidth()) {
                 offsetX = 0;
             }
@@ -57,13 +60,12 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
                 frame = new Rect();
             }
             frame.set(offsetX, offsetY, offsetX + width, offsetY + height);
+
             allItemFrames.put(i, frame);
-            hasAttachedItems.put(i, false);
-            //最后，将View布局
-//            layoutDecorated(view, offsetX, offsetY, offsetX + width, offsetY + height);
             totalHeight += height;
             offsetY += height;
             offsetX += width;
+            detachAndScrapView(view,recycler);
         }
         totalHeight = Math.max(totalHeight, getVerticalSpace());
         recyclerAndFillItems(recycler, state);
@@ -73,23 +75,15 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
         if (state.isPreLayout()) {
             return;
         }
+        Log.d(TAG, "childCount: " + getChildCount() + " itemCount: " + getItemCount());
         Rect displayFrame = new Rect(0, verticalScrollOffset, getHorizontalSpace(), verticalScrollOffset + getVerticalSpace());
-        Rect childFrame = new Rect();
-        for (int i = 0; i < getChildCount(); i++) {
-            View child = getChildAt(i);
-            childFrame.left = getDecoratedLeft(child);
-            childFrame.right = getDecoratedRight(child);
-            childFrame.top = getDecoratedTop(child);
-            childFrame.bottom = getDecoratedBottom(child);
+        Log.d(TAG, "displayFrame: " + displayFrame.flattenToString());
 
-            if (!Rect.intersects(displayFrame, childFrame)) {
-                removeAndRecycleView(child, recycler);
-            }
-        }
 
-        for (int i = 0; i < getItemCount(); i++) {
+        for (int i = 0; i < state.getItemCount(); i++) {
 
             if (Rect.intersects(displayFrame, allItemFrames.get(i))) {
+            Log.d(TAG, "childFrame: " + allItemFrames.get(i).flattenToString());
 
                 View scrap = recycler.getViewForPosition(i);
                 measureChildWithMargins(scrap, 0, 0);
@@ -103,6 +97,8 @@ public class CustomLayoutManager extends RecyclerView.LayoutManager {
                         frame.right,
                         frame.bottom - verticalScrollOffset);
 
+            } else {
+                removeAndRecycleView(recycler.getViewForPosition(i),recycler);
             }
         }
 

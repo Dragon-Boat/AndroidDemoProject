@@ -3,6 +3,7 @@ package com.sundae.zl.androiddemoproject.model;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -16,11 +17,13 @@ import com.fivehundredpx.greedolayout.GreedoLayoutSizeCalculator;
  */
 
 public class GreedoRVAdapter extends RecyclerView.Adapter implements GreedoLayoutSizeCalculator.SizeCalculatorDelegate{
+    private static final String TAG = "GreedoRVAdapter";
     private int[] mImageResIds = DataSource.get().getImages(5);
     private final double[] mImageAspectRatios = new double[mImageResIds.length];
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.d(TAG, "onCreateViewHolder: ");
         ImageView imageView = new ImageView(parent.getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));

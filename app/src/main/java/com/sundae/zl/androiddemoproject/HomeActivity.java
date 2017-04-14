@@ -18,9 +18,12 @@ import com.sundae.zl.androiddemoproject.vlayoutexample.RootActivity;
 public class HomeActivity extends BaseUtilActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -5,8 +5,6 @@ import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
  * Created by @author hzzhoulong
  * on 2017/3/30.
@@ -16,15 +14,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class BaseAdapter extends RecyclerView.Adapter{
     private static final String TAG = "BaseAdapter";
     private int[] mImageResIds = DataSource.get().getImages();
-    private AtomicInteger count = new AtomicInteger(0);
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        count.getAndAdd(1);
-        Log.d(TAG, "onCreateViewHolder count: " + count);
+        Log.d(TAG, "onCreateViewHolder: " );
         ImageView imageView = new ImageView(parent.getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setLayoutParams(new ViewGroup.LayoutParams(600,600));
+        imageView.setLayoutParams(new ViewGroup.LayoutParams(300,300));
 
         return new BaseViewHolder(imageView);
     }
