@@ -47,6 +47,11 @@
                 android:id="@+id/popwin_btn"
                 style="@style/Widget.Normal.Button"
                 android:text="popwin" />
+
+            <Button
+                android:id="@+id/expandlist_btn"
+                style="@style/Widget.Normal.Button"
+                android:text="expandlist_btn" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </FrameLayout>

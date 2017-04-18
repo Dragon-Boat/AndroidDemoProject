@@ -80,6 +80,12 @@ public class HomeActivity extends BaseUtilActivity
                 PopWinActivity.start(HomeActivity.this);
             }
         });
+        $(R.id.expandlist_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ExpandListActivity.start(HomeActivity.this);
+            }
+        });
     }
 
     @Override
